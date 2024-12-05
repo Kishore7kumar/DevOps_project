@@ -1,4 +1,4 @@
-name: Run rpc.py
+name: Run Rock, Paper, Scissors Game
 
 on:
   push:
@@ -16,15 +16,15 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Set up Python
+    - name: Set up Python 3.9
       uses: actions/setup-python@v4
       with:
-        python-version: 3.9  # Adjust to your Python version
+        python-version: 3.9
 
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install loguru  # If you're using loguru
+        pip install -r requirements.txt
 
     - name: Run rpc.py
       run: python rpc.py
